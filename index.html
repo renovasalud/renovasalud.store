@@ -3,186 +3,807 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Distribuidor Autorizado FWP - Chris Olave</title>
+    <!-- Título optimizado para el objetivo del producto -->
+    <title>RENÖVA+: Una Fórmula para la Firmeza de tu Piel y Bienestar Articular</title>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <style>
-        /* Estilos personalizados para alinear con tu marca */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #111827; /* Un fondo oscuro y elegante */
-            color: #F3F4F6;
+        /* --- ESTILO HORMOZI: Colores alineados con la marca RENÖVA+ --- */
+        :root {
+            --color-primario: #111111;
+            --color-secundario: #f9f9f9;
+            --color-acento: #C72C82; 
+            --color-acento-popular: #28a745; /* Verde para el botón popular */
+            --color-texto: #333;
+            --color-blanco: #ffffff;
+            --color-fondo-tarjeta: #1e1e1e; /* Color de fondo oscuro para las tarjetas */
+            --fuente-titulos: 'Oswald', sans-serif;
+            --fuente-cuerpo: 'Roboto', sans-serif;
         }
 
-        /* Colores inspirados en los productos FWP */
-        .fwp-pink { color: #E5007E; }
-        .fwp-green { color: #A3BF15; }
-        .fwp-orange { color: #F58220; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--fuente-cuerpo);
+            color: var(--color-texto);
+            background-color: var(--color-blanco);
+            line-height: 1.7;
+            /* Espacio en la parte inferior para que el botón fijo no tape el contenido */
+            padding-bottom: 100px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 50px 20px;
+        }
         
-        .bg-fwp-pink { background-color: #E5007E; }
-        .bg-fwp-green { background-color: #A3BF15; }
-        .bg-fwp-orange { background-color: #F58220; }
-
-        .border-fwp-pink { border-color: #E5007E; }
-        .border-fwp-green { border-color: #A3BF15; }
-        .border-fwp-orange { border-color: #F58220; }
-
+        /* --- BOTÓN DE ACCIÓN (CTA) --- */
         .cta-button {
-            transition: all 0.3s ease;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-            font-weight: 600;
+            display: inline-block;
+            background: var(--color-acento);
+            color: var(--color-blanco);
+            padding: 18px 35px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            font-family: var(--fuente-titulos);
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0, 0.3);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            max-width: 400px;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+            transform: translateY(-3px);
         }
 
-        .product-card {
-            transition: all 0.3s ease;
-            border: 1px solid #374151; /* Borde sutil */
+        .cta-button-popular {
+            background: var(--color-acento-popular);
         }
         
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-            border-color: #9CA3AF;
+        .cta-subtitle {
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            background-color: var(--color-secundario);
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .product-type-badge {
+            display: inline-block;
+            background-color: #e9ecef;
+            color: var(--color-texto);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            border: 1px solid #dee2e6;
+        }
+
+        .hero h1 {
+            font-family: var(--fuente-titulos);
+            font-size: 3.2rem;
+            line-height: 1.2;
+            color: var(--color-primario);
+            margin-bottom: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .sub-headline {
+            font-size: 1.4rem;
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+            color: var(--color-texto);
         }
         
-        .product-image {
-            height: 250px;
+        .hero-image {
+            max-width: 300px;
             width: 100%;
-            object-fit: contain; /* Asegura que la imagen se vea completa */
+            margin-bottom: 30px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));
+        }
+        
+        /* --- SECCIÓN DEL PROBLEMA --- */
+        .problem-section {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+        }
+        
+        .problem-section h2 {
+            text-align: center;
+            font-family: var(--fuente-titulos);
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--color-blanco);
+        }
+        
+        .problem-list {
+            list-style: none;
+            max-width: 600px;
+            margin: auto;
+            font-size: 1.2rem;
+        }
+        
+        .problem-list li {
+            padding: 12px 0 12px 40px;
+            position: relative;
+        }
+
+        .problem-list li::before {
+            content: '⚠️';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            font-size: 1.5rem;
+        }
+        
+        /* --- SECCIÓN DE LA SOLUCIÓN (INGREDIENTES) --- */
+        .solution-section h2 {
+            text-align: center;
+            font-family: var(--fuente-titulos);
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+        }
+        
+        .ingredient-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .ingredient-card {
+            background: var(--color-secundario);
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .ingredient-card .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--color-acento);
+        }
+        
+        .ingredient-card h3 {
+            font-family: var(--fuente-titulos);
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--color-primario);
+        }
+
+        .extra-image-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .extra-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            background: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: 1px solid #ddd;
+        }
+
+        /* --- SECCIÓN OFERTA IRRESISTIBLE --- */
+        .offer-section {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+        }
+        
+        .offer-section h2 {
+            font-family: var(--fuente-titulos);
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+            color: var(--color-blanco);
+        }
+
+        .offer-section .offer-subtitle {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            text-align: center;
+            color: var(--color-blanco);
+        }
+
+        .what-you-get {
+            list-style: none;
+            margin: 25px auto;
+            max-width: 600px; 
+            text-align: left;
+            font-size: 1.1rem;
+            color: var(--color-blanco);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .what-you-get .pack-title {
+            font-family: var(--fuente-titulos);
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--color-acento);
+        }
+
+        .what-you-get ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .what-you-get li {
+            padding: 8px 0;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: var(--color-fondo-tarjeta);
+            color: var(--color-blanco);
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #444;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--color-acento-popular);
+            position: relative;
+        }
+
+        .pricing-card .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-acento-popular);
+            color: var(--color-blanco);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            font-family: var(--fuente-titulos);
+        }
+
+        .pricing-card h3 {
+            font-family: var(--fuente-titulos);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--color-blanco);
+        }
+
+        .pricing-card-image {
+            max-width: 100%;
+            height: 260px; /* Aumentado para MÁXIMO impacto visual */
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .price-details {
+            margin-bottom: 25px;
+        }
+        
+        .price-details .price-value {
+            font-family: var(--fuente-titulos);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--color-blanco);
+            line-height: 1;
+        }
+        
+        .price-details .price-saving {
+            font-size: 1rem;
+            color: var(--color-acento-popular);
+            font-weight: 700;
+            margin-top: 5px;
+            height: 1.2em;
+        }
+
+        .price-details .price-per-unit {
+            font-size: 0.9rem;
+            color: #ccc;
+            height: 1.2em;
+        }
+
+        .pricing-card .cta-button {
+            margin-top: auto;
+            width: 100%;
+            max-width: 100%;
+            font-size: 1.2rem;
+            padding: 15px 20px;
+        }
+        
+        .wholesale-cta-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .wholesale-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--color-blanco);
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: var(--fuente-cuerpo);
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 2px solid var(--color-acento);
+            cursor: pointer;
+            max-width: 600px;
+            line-height: 1.4;
+        }
+
+        .wholesale-button:hover {
+            background-color: var(--color-acento);
+            color: var(--color-blanco);
+        }
+
+
+        /* --- SECCIÓN TESTIMONIOS (PRUEBA SOCIAL REAL) --- */
+        .testimonials h2 {
+            text-align: center;
+            font-family: var(--fuente-titulos);
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            max-width: 700px;
+            margin: auto;
+        }
+        
+        .testimonial-card {
+            background-color: var(--color-secundario);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 6px solid var(--color-acento);
+        }
+        
+        .testimonial-card p {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .testimonial-card .author {
+            font-weight: 700;
+            text-align: right;
+            color: var(--color-acento);
+        }
+        
+        /* --- SECCIÓN FAQ (DESTRUIR OBJECIONES) --- */
+        .faq h2 {
+            text-align: center;
+            font-family: var(--fuente-titulos);
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .faq-question {
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            padding-right: 30px;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            transition: transform 0.3s;
+            color: var(--color-acento);
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-top: 15px;
+        }
+        
+        /* --- SECCIÓN DE ADVERTENCIAS LEGALES --- */
+        .legal-disclaimer {
+            background-color: #f8f9fa;
+            border-top: 2px solid #dee2e6;
+            border-bottom: 2px solid #dee2e6;
+        }
+        .legal-disclaimer .container {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .legal-disclaimer h3 {
+            text-align: center;
+            font-family: var(--fuente-titulos);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--color-primario);
+        }
+        .legal-disclaimer p {
+            font-size: 0.95rem;
+            max-width: 700px;
+            margin: 0 auto 10px auto;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--color-primario);
+            color: var(--color-blanco);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* --- BOTÓN FIJO EN MÓVIL Y ESCRITORIO --- */
+        .fixed-cta {
+            display: block;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            padding: 15px;
+            box-shadow: 0 -3px 10px rgba(0,0,0,0.15);
+            z-index: 1000;
+            text-align: center;
+        }
+        
+        .fixed-cta .cta-button {
+            font-size: 1.2rem;
+            padding: 15px 25px;
+        }
+        
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero .sub-headline { font-size: 1.2rem; }
+            .problem-section h2, .solution-section h2, .offer-section h2, .testimonials h2, .faq h2 { font-size: 2.2rem; }
+            .container { padding: 40px 15px; }
         }
     </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '841830128182783');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display="none"
+src="https://www.facebook.com/tr?id=841830128182783&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
-<body class="antialiased">
+<body>
 
-    <!-- Menú de Navegación -->
-    <nav class="bg-gray-900/80 backdrop-blur-sm shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-3">
-            <div class="flex items-center justify-between">
-                <div>
-                    <a class="text-white text-2xl font-bold" href="#">
-                        <span class="fwp-pink">FWP</span> <span class="text-gray-300">Chris Olave</span>
-                    </a>
-                </div>
-                <!-- Menú para Desktop -->
-                <div class="hidden md:flex items-center space-x-6">
-                    <a class="text-gray-300 hover:fwp-pink transition-colors duration-300" href="#">Inicio</a>
-                    <a class="text-gray-300 hover:fwp-pink transition-colors duration-300" href="#productos">Productos</a>
-                    <a class="text-gray-300 hover:fwp-pink transition-colors duration-300" href="#">Sobre Nosotros</a>
-                    <a class="text-gray-300 hover:fwp-pink transition-colors duration-300" href="#">Contacto</a>
-                </div>
-                <!-- Botón de Menú para Móvil -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-white focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-            <!-- Menú para Móvil (Oculto por defecto) -->
-            <div id="mobile-menu" class="hidden md:hidden py-4">
-                <a href="#" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Inicio</a>
-                <a href="#productos" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Productos</a>
-                <a href="#" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Sobre Nosotros</a>
-                <a href="#" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700 rounded">Contacto</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Sección Hero -->
-    <header class="bg-gray-900 text-center py-20 md:py-32">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl md:text-6xl font-black text-white leading-tight">
-                Transforma tu Bienestar, <span class="fwp-pink">Potencia tu Vida</span>
-            </h1>
-            <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-                Descubre la línea de productos FWP diseñados con la más alta tecnología para optimizar tu salud y energía diaria.
-            </p>
-            <a href="#productos" class="mt-8 inline-block cta-button bg-fwp-pink text-white text-lg px-8 py-3 rounded-lg">
-                Ver Productos
+    <!-- ====================================================== -->
+    <!-- ====== SECCIÓN HERO: PROPÓSITO Y BENEFICIO CLAVE ====== -->
+    <!-- ====================================================== -->
+    <header class="hero">
+        <div class="container">
+            <span class="product-type-badge">SUPLEMENTO ALIMENTICIO</span>
+            <img src="images/potes.png" alt="Pote de RENÖVA+ Suplemento Alimenticio" class="hero-image">
+            <h1>UNA FÓRMULA DISEÑADA PARA LA FIRMEZA DE TU PIEL Y EL BIENESTAR ARTICULAR</h1>
+            <p class="sub-headline">Descubre el poder del Colágeno Peptan®, Resveratrol y Q10, ingredientes seleccionados para nutrir tu cuerpo desde adentro y apoyar un estilo de vida activo y juvenil.</p>
+            <!-- BOTÓN DE ACCIÓN 1: WHATSAPP -->
+            <a href="#oferta" class="cta-button">
+                VER PLANES DE BIENESTAR
+                <span class="cta-subtitle">Elige tu Misión de 1, 2 o 3 meses</span>
             </a>
         </div>
     </header>
 
-    <!-- Sección de Productos -->
-    <main id="productos" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">Nuestros Productos Estrella</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-
-                <!-- Producto 1: Renöva Plus -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-xl">
-                    <div class="p-6 bg-gray-900">
-                         <img src="images/MOCKUP-renova-CHILE.png" alt="Producto Renöva Plus de FWP" class="product-image mx-auto">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold fwp-pink mb-2">Renöva Plus</h3>
-                        <p class="text-gray-400 mb-6 h-20">La dosis diaria de juventud con Colágeno, Resveratrol y Coenzima Q10 para una piel radiante y articulaciones fuertes.</p>
-                        <!-- MEJORA: Se estandariza a ruta relativa para mayor portabilidad del sitio. -->
-                        <a href="renova.html" class="cta-button inline-block bg-fwp-pink text-white px-6 py-2 rounded-md">Ver más</a>
-                    </div>
-                </div>
-
-                <!-- Producto 2: 24Burn -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-xl">
-                    <div class="p-6 bg-gray-900">
-                        <img src="images/24burn-pote-transparente.png.png" alt="Producto 24Burn de FWP" class="product-image mx-auto">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold fwp-green mb-2">24Burn</h3>
-                        <p class="text-gray-400 mb-6 h-20">Activa tu metabolismo y reduce medidas con la poderosa combinación de Té Verde, Panax Ginseng y L-Carnitina.</p>
-                        <!-- CORRECCIÓN: Se agrega el enlace a la página del producto. -->
-                        <a href="24burn.html" class="cta-button inline-block bg-fwp-green text-white px-6 py-2 rounded-md">Ver más</a>
-                    </div>
-                </div>
-
-                <!-- Producto 3: E-Boost -->
-                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-xl">
-                    <div class="p-6 bg-gray-900">
-                        <img src="images/MOCKUP-CAJA-EBOOST-CHILE.png" alt="Producto E-Boost de FWP" class="product-image mx-auto">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold fwp-orange mb-2">E-Boost</h3>
-                        <p class="text-gray-400 mb-6 h-20">El impulso de energía inteligente que necesitas para superar tu rutina diaria, con Guaraná, Té Negro y Yerba Mate.</p>
-                        <!-- CORRECCIÓN: Se agrega el enlace a la página del producto. -->
-                        <a href="eboost.html" class="cta-button inline-block bg-fwp-orange text-white px-6 py-2 rounded-md">Ver más</a>
-                    </div>
-                </div>
-
+    <main>
+        <!-- ====================================================== -->
+        <!-- ======== SECCIÓN DEL PROBLEMA (AGITACIÓN DIRECTA) ==== -->
+        <!-- ====================================================== -->
+        <section class="problem-section">
+            <div class="container">
+                <h2>¿ESTÁS LUCHANDO CONTRA ESTO?</h2>
+                <ul class="problem-list">
+                    <li>Te miras al espejo y notas que tu piel perdió la firmeza y elasticidad que tenías antes.</li>
+                    <li>Notas que tu pelo está débil y tus uñas se quiebran con facilidad, impidiendo que crezcan sanas.</li>
+                    <li>Sientes que las rodillas, hombros o caderas te "pasan la cuenta" después de entrenar o al final del día.</li>
+                    <li>Tu energía no es la misma y sientes que necesitas un impulso para rendir al 100%.</li>
+                    <li>Has probado otros colágenos baratos que prometieron mucho pero no te dieron ningún resultado visible.</li>
+                    <li>Estás harto/a de sentirte promedio y quieres una solución real para verte y sentirte más joven.</li>
+                </ul>
             </div>
-        </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- ============ SECCIÓN DE LA SOLUCIÓN (INGREDIentes) ==== -->
+        <!-- ====================================================== -->
+        <section class="solution-section">
+            <div class="container">
+                <h2>UNA FÓRMULA DISEÑADA PARA TU BIENESTAR</h2>
+                <div class="ingredient-grid">
+                    <div class="ingredient-card">
+                        <div class="icon">✨</div>
+                        <h3>Colágeno Hidrolizado Peptan®</h3>
+                        <p>Una proteína clave que aporta a la estructura y nutrición de la piel, cabello y articulaciones.</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <div class="icon">🍇</div>
+                        <h3>Resveratrol</h3>
+                        <p>Un conocido polifenol con capacidad antioxidante, que ayuda a proteger las células del estrés oxidativo.</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <div class="icon">⚡</div>
+                        <h3>Coenzima Q10</h3>
+                        <p>Un componente presente en nuestras células que participa en la producción de energía.</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <div class="icon">💪</div>
+                        <h3>Magnesio + Zinc</h3>
+                        <p>Minerales esenciales que contribuyen al funcionamiento normal del sistema inmune y al mantenimiento de los huesos.</p>
+                    </div>
+                </div>
+
+                <!-- ESPACIO PARA IMAGEN ADICIONAL -->
+                <div class="extra-image-container">
+                    <img src="images/pote renova.png" alt="Imagen de beneficio adicional de RENÖVA+">
+                </div>
+
+                <div class="trust-badges">
+                    <span class="trust-badge">✓ Formulado por Doctores</span>
+                    <span class="trust-badge">✓ Ingredientes Premium</span>
+                    <span class="trust-badge">✓ Certificación HACCP</span>
+                    <span class="trust-badge">✓ 0% Azúcar</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- ======== SECCIÓN OFERTA CON PLANES (VISUAL) ======== -->
+        <!-- ====================================================== -->
+        <section class="offer-section" id="oferta">
+            <div class="container">
+                <h2>INICIA TU MISIÓN DE BIENESTAR</h2>
+                <p class="offer-subtitle">Cada compra es un "Pack de Bienvenida" con todo lo que necesitas para empezar. ¡Elige por cuántos meses quieres asegurar tu Misión y ahorra!</p>
+                
+                <div class="what-you-get">
+                    <div class="pack-title">TODO ESTO INCLUYE TU PACK DE BIENVENIDA:</div>
+                    <ul>
+                        <li>✅ <strong>RENÖVA+ (1 Mes de Suministro)</strong> - Valor: $49.990</li>
+                        <li>✅ <strong>Envío a todo Chile</strong> - <span style="text-decoration: line-through;">$5.490</span> <strong style="color: var(--color-acento-popular);">GRATIS</strong></li>
+                        <li>✅ <strong>BONUS #1: Guía PDF "Los 5 Alimentos Aliados de tu Piel"</strong> - Valor: $10.000</li>
+                        <li>✅ <strong>BONUS #2: Apoyo Personalizado por WhatsApp</strong> - Valor: Incalculable</li>
+                        <li>✅ <strong>BONUS #3: Acceso a Comunidad Privada</strong> - Valor: $30.000</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Plan 1 Mes -->
+                    <div class="pricing-card">
+                        <h3>PACK INICIO</h3>
+                        <img src="images/1pote.png" alt="Plan de 1 Mes de RENÖVA+" class="pricing-card-image">
+                        <div class="price-details">
+                            <div class="price-value">$54.990</div>
+                            <div class="price-saving" style="color: #fff; font-weight: 700;">Envío Incluido</div>
+                            <div class="price-per-unit">&nbsp;</div>
+                        </div>
+                        <a href="https://wa.me/56959744777?text=Hola!%20Quiero%20comprar%20el%20Pack%20de%20Bienvenida%20REN%C3%96VA%2B%20-%201%20Mes%20por%20$54.990." target="_blank" class="cta-button" onclick="fbq('track', 'Contact');">
+                            COMPRAR 1 UNIDAD
+                        </a>
+                    </div>
+
+                    <!-- Plan 2 Meses (Popular) -->
+                    <div class="pricing-card popular">
+                        <div class="badge">MÁS POPULAR</div>
+                        <h3>PACK 2 MESES</h3>
+                        <img src="images/2pote.png" alt="Plan de 2 Meses de RENÖVA+" class="pricing-card-image">
+                        <div class="price-details">
+                             <div class="price-value">$102.480</div>
+                            <div class="price-saving">Te ahorras $7.500</div>
+                            <div class="price-per-unit">$51.240 por unidad</div>
+                        </div>
+                        <a href="https://wa.me/56959744777?text=Hola!%20Quiero%20comprar%20el%20Pack%20de%20Bienvenida%20REN%C3%96VA%2B%20-%202%20Meses%20por%20$102.480." target="_blank" class="cta-button cta-button-popular" onclick="fbq('track', 'Contact');">
+                            COMPRAR 2 UNIDADES
+                        </a>
+                    </div>
+
+                    <!-- Plan 3 Meses -->
+                    <div class="pricing-card">
+                        <h3>PACK 3 MESES</h3>
+                        <img src="images/3pote.png" alt="Plan de 3 Meses de RENÖVA+" class="pricing-card-image">
+                        <div class="price-details">
+                            <div class="price-value">$149.970</div>
+                            <div class="price-saving">Te ahorras $15.000</div>
+                            <div class="price-per-unit">$49.990 por unidad</div>
+                        </div>
+                        <a href="https://wa.me/56959744777?text=Hola!%20Quiero%20comprar%20el%20Pack%20de%20Bienvenida%20REN%C3%96VA%2B%20-%203%20Meses%20por%20$149.970." target="_blank" class="cta-button" onclick="fbq('track', 'Contact');">
+                            COMPRAR 3 UNIDADES
+                        </a>
+                    </div>
+                </div>
+                <!-- Botón de Venta al por Mayor -->
+                <div class="wholesale-cta-container">
+                    <a href="https://wa.me/56959744777?text=Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20oportunidad%20de%20comprar%20al%20por%20mayor%20con%20descuento." target="_blank" class="wholesale-button" onclick="fbq('track', 'Contact');">
+                        ¿Eres comerciante o buscas un descuento mayor? Conoce la oportunidad de comprar al por mayor con un 35% a 50% de descuento.
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ====================================================== -->
+        <!-- ============== SECCIÓN TESTIMONIOS =================== -->
+        <!-- ====================================================== -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>PERSONAS REALES, EXPERIENCIAS REALES</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p>"Llevo 3 semanas tomando Renöva+ y me encanta cómo se siente mi piel, mucho más nutrida. Además, siento un plus de energía en mis mañanas. ¡Totalmente recomendado como complemento!"</p>
+                        <p class="author">- Daniela F., Artificio</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Lo compré para complementar mi nutrición deportiva. Siento un buen soporte en mis articulaciones (rodillas y tobillos) después de correr y mi recuperación general es excelente. Me su gusta rico sabor a berries y que no tenga azúcar. Un 100/10."</p>
+                        <p class="author">- Seba C., Chillan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- ====== SECCIÓN PREGUNTAS FRECUENTES (FAQ) ============ -->
+        <!-- ====================================================== -->
+        <section class="faq">
+            <div class="container">
+                <h2>TUS DUDAS, RESUELTAS.</h2>
+                <div class="faq-item">
+                    <div class="faq-question">¿Cuándo notaré los beneficios?</div>
+                    <div class="faq-answer">
+                        <p>Como suplemento, los resultados varían en cada persona. Muchos sienten un mayor bienestar y energía general en las primeras semanas. Para notar los aportes a la piel y cabello, se recomienda un uso constante por al menos 21 días como parte de un estilo de vida saludable.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Tiene azúcar o afecta mi dieta?</div>
+                    <div class="faq-answer">
+                        <p>No. RENÖVA+ tiene 0 gramos de azúcar y 0 gramos de grasa. Con solo 48 calorías y 11 gramos de proteína por porción, es un excelente complemento para cualquier plan de alimentación.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Cómo se prepara?</div>
+                    <div class="faq-answer">
+                        <p>Es muy simple. Disuelve una cucharada (15g) en un vaso de 250 ml con agua. Revuelve bien y disfruta de su delicioso sabor a berries. Puedes tomarlo a la hora que más te acomode.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">¿El envío llega a mi ciudad?</div>
+                    <div class="faq-answer">
+                        <p>¡Sí! Todos nuestros planes incluyen envío GRATIS a todo Chile, desde Arica a Punta Arenas. Tu pedido llegará a la puerta de tu casa sin costo adicional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- ====== SECCIÓN DE ADVERTENCIAS LEGALES (IMPORTANTE) === -->
+        <!-- ====================================================== -->
+        <section class="legal-disclaimer">
+            <div class="container">
+                <h3>INFORMACIÓN IMPORTANTE</h3>
+                <p><strong>Este producto es un suplemento alimenticio, no es un medicamento y no suple una alimentación balanceada.</strong></p>
+                <p>Su uso no es recomendable para consumo por menores de 18 años, embarazadas y nodrizas, salvo indicación profesional competente y no reemplaza a una alimentación balanceada.</p>
+                <p>Las personas con alguna condición médica preexistente o que tomen medicamentos deben consultar a su médico antes de consumir cualquier suplemento.</p>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 Chris Olave - Distribuidor Autorizado FWP. Todos los derechos reservados.</p>
-            <p class="text-xs mt-2">Los suplementos alimenticios no reemplazan una dieta equilibrada.</p>
-        </div>
+    <!-- ====================================================== -->
+    <!-- ============== BOTÓN FIJO INFERIOR ===================== -->
+    <!-- ====================================================== -->
+    <div class="fixed-cta">
+        <a href="#oferta" class="cta-button">VER PLANES DE BIENESTAR</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 FWP Chile | Todos los derechos reservados.<br>Los suplementos alimenticios son una herramienta para complementar tu estilo de vida.</p>
     </footer>
-
+    
     <script>
-        // Lógica para el menú móvil
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // Script simple y eficiente para el acordeón de FAQ
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const currentlyActive = document.querySelector('.faq-item.active');
+                    if (currentlyActive && currentlyActive !== item) {
+                        currentlyActive.classList.remove('active');
+                    }
+                    item.classList.toggle('active');
+                });
+            });
         });
     </script>
-
 </body>
 </html>
+
